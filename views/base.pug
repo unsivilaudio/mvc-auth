@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+    head
+        title MVC Auth | #{title}
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE-Edge')
+        meta(name='viewport', content='width-device-width, maximum-scale=1.0, user-scalable=no')
+        link(rel='stylesheet', href='/style.css')
+    body
+        include _header
+
+        main.main
+            .container
+                if error && error.message
+                    .message.message__error #{error.message}
+
+                if success && success.message
+                    .message.message__success #{success.message}
+
+                block content
+                    h1 This is placeholder heading
+
+        include _footer

@@ -1,0 +1,22 @@
+{
+    "name": "mvc-auth",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "start:db": "mongod --dbpath=./data"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.6.1",
+        "mongoose": "^5.10.14",
+        "mongoose-unique-validator": "^2.0.3",
+        "pug": "^3.0.0",
+        "uuid": "^8.3.1"
+    }
+}
