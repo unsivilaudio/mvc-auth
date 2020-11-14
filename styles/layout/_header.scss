@@ -1,0 +1,69 @@
+.NavBar {
+    color: $color-black;
+    background: $color-primary-light;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .Container {
+        padding: 1rem 5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .Branding {
+            // color: $color-tertiary-dark;
+            font-size: 2.8rem;
+            font-weight: 400;
+            text-shadow: 2px 2px 3px $color-tertiary-light;
+            text-transform: uppercase;
+            font-style: italic;
+            padding: 0;
+        }
+
+        .List {
+            list-style: none;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+
+            .ListItem {
+                position: relative;
+                cursor: pointer;
+                padding: 0.7rem 1.8rem;
+                font-weight: 700;
+                height: 100%;
+                margin-left: 1rem;
+                transition: all 0.5s ease;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    height: 2px;
+                    width: 0;
+                    overflow: hidden;
+                    background: $color-tertiary-dark;
+                    transform: translateX(-50%);
+                    transition: all 0.5s ease;
+                    // transform-origin: right center;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                &:hover {
+                    color: $color-tertiary-dark;
+                    // background: rgba(0, 0, 0, 0.3);
+                    // border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+}

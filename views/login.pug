@@ -2,15 +2,15 @@ extends base
 
 block content
 
-    .form.auth
-        header.form__header Welcome Back to MVC Auth
-        form.form__control(action="/auth/login" method="post")
-            .form__group
-                label.form__label(for="email") Email
-                input.form__input(type="email" id="email" name="email")
-            .form__group
-                label.form__label(for="password") Password
-                input.form__input(type="password" id="password" name="password")
-            .form__actions
-                button.btn.btn__tertiary.form__button(type="submit") Log In
-                a.form__switch(href="/auth/signup") Not A Member Yet? Switch to sign up.
+    .Form.Auth
+        header.FormHeader Welcome Back to MVC Auth
+        form.FormControl(action="/auth/login" method="post")
+            .FormGroup
+                label.FormLabel(for="email") Email
+                input.FormInput(type="email" id="email" name="email")
+            .FormGroup
+                label.FormLabel(for="password") Password
+                input.FormInput(type="password" id="password" name="password")
+            .FormActions
+                button.Btn.BtnTertiary.FormButton(type="submit") Log In
+                a.FormSwitch(href="/signup") Not A Member Yet? Switch to sign up.

@@ -1,0 +1,59 @@
+.Btn {
+    font-size: inherit;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1.4rem;
+
+    box-shadow: $btn-shadow-primary;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: $btn-shadow-active;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(-1px);
+    }
+
+    &.BtnPrimary {
+        background: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+        );
+        background-size: 400%;
+        background-position: top 0 left 0;
+        &:hover {
+            background-position: bottom 0 right 0;
+        }
+    }
+
+    &.BtnSecondary {
+        background: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+        );
+        background-size: 400%;
+        background-position: top 0 left 0;
+        &:hover {
+            background-position: bottom 0 right 0;
+        }
+    }
+
+    &.BtnTertiary {
+        color: $color-white;
+        background: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+        );
+        background-size: 400%;
+        background-position: top 0 left 0;
+        &:hover {
+            background-position: bottom 0 right 0;
+        }
+    }
+}

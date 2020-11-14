@@ -5,17 +5,17 @@ html(lang='en')
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE-Edge')
         meta(name='viewport', content='width-device-width, maximum-scale=1.0, user-scalable=no')
-        link(rel='stylesheet', href='/style.css')
+        link(rel='stylesheet', href='/bundle.css')
     body
         include _header
 
-        main.main
-            .container
+        main.Main
+            .MainContainer
                 if error && error.message
-                    .message.message__error #{error.message}
+                    .Message.MessageError #{error.message}
 
                 if success && success.message
-                    .message.message__success #{success.message}
+                    .Message.MessageSuccess #{success.message}
 
                 block content
                     h1 This is placeholder heading

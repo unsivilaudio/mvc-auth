@@ -1,12 +1,12 @@
-header.header
-    nav.nav
-        a.brand(href='/') MVC Auth
-        div.nav__list
-            if user
-                p.user__info #{user.username}
-                a.btn.btn__primary.nav__item(href='/protected') Secret
-                a.btn.btn__primary.nav__item(href='/logout') Logout
-            else
-                a.btn.btn__primary.nav__item(href='/login') Login
-                a.btn.btn__primary.nav__item(href='/signup') Sign Up
+header.Header
+    nav.NavBar
+        .Container
+            a.Branding(href='/') MVC Auth
+            div.List
+                if user
+                    p.UserInfo #{user.name}
+                    a.ListItem(href='/auth/logout') Logout
+                else
+                    a.ListItem(href='/login') Login
+                    a.ListItem(href='/signup') Sign Up
                 

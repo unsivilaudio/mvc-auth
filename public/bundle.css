@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Open Sans', san-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+main {
+  flex: 1;
+  color: #0f1117;
+  background: #ebe8ef; }
+  main .MainContainer {
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 2.5rem; }
+
+.Message {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding: 2rem 4.5rem;
+  border-radius: 1rem;
+  text-align: center; }
+  .Message.MessageSuccess {
+    color: #0f1117;
+    background: #87da80; }
+  .Message.MessageError {
+    color: #efefef;
+    background: #e67878; }
+
+.Form {
+  width: 100%;
+  padding: 2rem; }
+  .Form .FormHeader {
+    font-size: 4.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-align: center; }
+  .Form .FormControl .FormGroup .FormLabel {
+    font-weight: 700;
+    margin-bottom: 1rem; }
+  .Form .FormControl .FormGroup .FormInput {
+    border-radius: 0.5rem; }
+  .Form .FormControl .FormGroup:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .Form .FormControl .FormActions {
+    width: 100%;
+    display: flex;
+    align-items: center; }
+    .Form .FormControl .FormActions .FormButton {
+      font-size: 2rem;
+      width: 15rem; }
+    .Form .FormControl .FormActions a.FormSwitch,
+    .Form .FormControl .FormActions .FormSwitch {
+      color: inherit;
+      text-decoration: none;
+      font-size: 1.6rem;
+      margin-left: auto;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid transparent;
+      transform: translateY(1px);
+      transition: all 0.3s ease; }
+      .Form .FormControl .FormActions a.FormSwitch:visited,
+      .Form .FormControl .FormActions .FormSwitch:visited {
+        color: inherit; }
+      .Form .FormControl .FormActions a.FormSwitch:hover,
+      .Form .FormControl .FormActions .FormSwitch:hover {
+        transform: translateY(0);
+        border-bottom: 1px solid #fe3add;
+        color: #fe3add; }
+
+.Btn {
+  font-size: inherit;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 1.4rem;
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease; }
+  .Btn:hover {
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); }
+  .Btn:active {
+    box-shadow: none;
+    transform: translateY(-1px); }
+  .Btn.BtnPrimary {
+    background: linear-gradient(to right bottom, #2dbbef, #2d3bff);
+    background-size: 400%;
+    background-position: top 0 left 0; }
+    .Btn.BtnPrimary:hover {
+      background-position: bottom 0 right 0; }
+  .Btn.BtnSecondary {
+    background: linear-gradient(to right bottom, #f5b556, #da9328);
+    background-size: 400%;
+    background-position: top 0 left 0; }
+    .Btn.BtnSecondary:hover {
+      background-position: bottom 0 right 0; }
+  .Btn.BtnTertiary {
+    color: #efefef;
+    background: linear-gradient(to right bottom, #fe3add, #a53893);
+    background-size: 400%;
+    background-position: top 0 left 0; }
+    .Btn.BtnTertiary:hover {
+      background-position: bottom 0 right 0; }
+
+label {
+  display: inline-block; }
+
+input:focus,
+input {
+  display: block;
+  font-size: inherit;
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #efefef;
+  padding: 0.7rem 1.6rem; }
+
+.NavBar {
+  color: #0f1117;
+  background: #2dbbef;
+  width: 100%; }
+  .NavBar a {
+    text-decoration: none;
+    color: inherit; }
+  .NavBar .Container {
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .NavBar .Container .Branding {
+      font-size: 2.8rem;
+      font-weight: 400;
+      text-shadow: 2px 2px 3px #fe3add;
+      text-transform: uppercase;
+      font-style: italic;
+      padding: 0; }
+    .NavBar .Container .List {
+      list-style: none;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center; }
+      .NavBar .Container .List .ListItem {
+        position: relative;
+        cursor: pointer;
+        padding: 0.7rem 1.8rem;
+        font-weight: 700;
+        height: 100%;
+        margin-left: 1rem;
+        transition: all 0.5s ease; }
+        .NavBar .Container .List .ListItem::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          height: 2px;
+          width: 0;
+          overflow: hidden;
+          background: #a53893;
+          transform: translateX(-50%);
+          transition: all 0.5s ease; }
+        .NavBar .Container .List .ListItem:hover::after {
+          width: 100%; }
+        .NavBar .Container .List .ListItem:hover {
+          color: #a53893; }
+
+.Footer {
+  width: 100%;
+  color: #706d6d;
+  background: #464541;
+  display: flex;
+  justify-content: center; }
+  .Footer .Copyright {
+    font-size: 1.5rem;
+    padding: 0.7rem 3rem; }
+
+.Auth {
+  width: 100%;
+  color: #434953;
+  background: #d4d5d9;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 3px #aaa;
+  display: flex;
+  flex-direction: column; }
+
+.Hero {
+  color: #efefef;
+  background: #2a313a;
+  padding: 1.5rem 3rem;
+  border-radius: 1.2rem; }
+  .Hero .HeroHeader {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem; }
+  .Hero .HeroText {
+    font-size: 1.6rem;
+    font-weight: 400; }
+  .Hero .HeroActions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between; }
+    .Hero .HeroActions a {
+      flex: 0 1 25rem;
+      color: inherit;
+      text-decoration: none;
+      text-align: center; }

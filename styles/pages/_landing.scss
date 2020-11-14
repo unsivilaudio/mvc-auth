@@ -1,0 +1,32 @@
+.Hero {
+    color: $color-white;
+    background: $color-grey-dark-3;
+    padding: 1.5rem 3rem;
+    // line-height: 1;
+    border-radius: 1.2rem;
+
+    .HeroHeader {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    .HeroText {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    .HeroActions {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            flex: 0 1 25rem;
+            color: inherit;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+label {
+    display: inline-block;
+}
+
+input:focus,
+input {
+    display: block;
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: $color-white;
+    padding: 0.7rem 1.6rem;
+}

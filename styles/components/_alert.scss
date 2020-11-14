@@ -1,0 +1,17 @@
+.Message {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    padding: 2rem 4.5rem;
+    border-radius: 1rem;
+    text-align: center;
+
+    &.MessageSuccess {
+        color: $color-black;
+        background: #87da80;
+    }
+
+    &.MessageError {
+        color: $color-white;
+        background: #e67878;
+    }
+}

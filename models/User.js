@@ -24,12 +24,10 @@ userSchema.pre('save', function (next) {
             return next(err);
         }
 
-        console.log('Salt Done!');
         // hash (encrypt )our password using the salt
         bcrypt.hash(user.password, salt, function (err, hash) {
             // overwrite plain text pass with encrypted password
             user.password = hash;
-            console.log('Hash Done!');
             next();
         });
     });

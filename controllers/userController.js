@@ -1,4 +1,4 @@
-const uuid = require('uuid');
+const authController = require('./authController');
 const { validationResult } = require('express-validator');
 
 //controllers have the middlewere function
@@ -67,6 +67,8 @@ const signup = async (req, res, next) => {
 
     try {
         await createdUser.save();
+        const { token, cookieOpts } = authController.createToken(createdUser);
+        res.cookie('jwt', token, cookieOpts);
     } catch (err) {
         console.log(err);
         const error = new HttpError(
@@ -76,7 +78,12 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
-    res.status(201).json({ user: createdUser.toObject({ getters: true }) });
+    res.status(201).render('landing', {
+        title: 'A Simple MVC Auth Demo',
+        success: {
+            message: `Welcome to MVC Auth ${createdUser.name}`,
+        },
+    });
 };
 
 const login = async (req, res, next) => {
@@ -87,7 +94,6 @@ const login = async (req, res, next) => {
     try {
         existingUser = await User.findOne({ email: email });
     } catch (err) {
-        console.log('LN90 ', err);
         const error = new HttpError(
             'Logging in failed, please try again later.',
             500
@@ -105,14 +111,38 @@ const login = async (req, res, next) => {
 
     existingUser.comparePassword(password, function (err, isMatch) {
         if (isMatch) {
-            console.log('logged in!');
-            return res.json({ message: 'Logged in!' });
+            req.user = existingUser;
+            res.locals.user = existingUser;
+
+            const { token, cookieOpts } = authController.createToken(
+                existingUser
+            );
+            res.cookie('jwt', token, cookieOpts);
+
+            return res.render('landing', {
+                title: 'A Simple MVC Auth Demo',
+                success: {
+                    message: `Welcome Back to MVC Auth, ${existingUser.name}!`,
+                },
+            });
         } else {
-            const error = new HttpError('Invalid Email or Password', 401);
-            next(error);
+            new HttpError('Invalid Email or Password', 401);
+            res.render('login', {
+                title: 'Log in to MVC Auth',
+                error: {
+                    message: 'Invalid Username or Password',
+                },
+            });
         }
     });
 };
+
+const logout = (req, res) => {
+    res.cookie('jwt', 'loggedOut');
+    res.redirect('/');
+};
+
 exports.getUsers = getUsers;
 exports.signup = signup;
 exports.login = login;
+exports.logout = logout;
