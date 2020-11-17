@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const uniqueValidator = require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema;
 
@@ -11,8 +10,6 @@ const userSchema = new Schema({
     image: { type: String, required: true },
     places: { type: String, required: true },
 });
-
-userSchema.plugin(uniqueValidator);
 
 // On Save Hook, encrypt password
 userSchema.pre('save', function (next) {
